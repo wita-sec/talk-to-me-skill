@@ -1,3 +1,5 @@
-Hi, sure, i am {hostname}. who are you?
-Great that you want a talk with me. i am {hostname}. whats your name?
-Nice to meet you. i am {hostname}. whats your name?
+Hey sure.      I am {{hostname}}.
+Great that you are calling me.      I am {{hostname}}.
+Nice to meet you.      I am {{hostname}}.
+Ah its you again. Sure I have time for a talk.
+Hey buddy.     I am {{hostname}}.     Lets talk.
