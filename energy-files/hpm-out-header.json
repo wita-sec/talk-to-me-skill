@@ -1,0 +1,1 @@
+{"hc_shift": ["degree", 0, "Heizkurve Niveau"], "hc_slope": ["degree", 1, "Heizkurve Steigung"], "model": ["string", "E3_Vitocal", "Modell"], "online": ["bool", true, "Waermepumpe ist online"], "serial": ["string", "7720485201649122", "Seriennummer"]}
