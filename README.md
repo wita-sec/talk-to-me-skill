@@ -2,15 +2,21 @@
 Aims to talk with the user
 
 ## About
-Aims to talk with the user, wants to be entertaining, empathic, funny,
-
-with lots of surprises.
+            have some small talk with Picroft
+            have questions and answers about photovoltaik, heatpump, soc, grid, electric vehicle
+            you ask, Picroft answers to your questions
+            Data is read from json files, examples attached.
+            Date collection and json file generation is not part of this project.
+            LANG=de-de 
 
 ## Examples
-* "Is someone out there?"
-* "Are you online?"
-* "Have time for a talk?"
-* "Talk to me"
+* "Bist zu zu Hause"
+* "Hast du etwas Zeit?"
+* "Ich habe eine Frage"
+* "Was macht die Wärmepumpe?"
+* "Wieviel Strom haben wir heute eingespeist?"
+* "Wieviel Kilometer kann ich mit dem Auto noch fahren"?
+* "Ich brauche Hilfe"
 
 ## Credits
 wita-sec
@@ -24,4 +30,5 @@ Entertainment
 #Small talk
 #Funny
 #Surprise
+#Information about Smart Energy at Home 
 
