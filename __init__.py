@@ -26,7 +26,7 @@ Skill idea: have some small talk with Picroft
 """
 # Changelog
 # Version 3.0.20230110 prototyping new feature: query Pi about WITA-Energy data
-               data is available in erms of .json files
+             
 
 import os
 from os.path import exists
