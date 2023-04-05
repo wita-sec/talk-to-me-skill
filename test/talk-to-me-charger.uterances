@@ -1,0 +1,26 @@
+## this is a sampler of commonly used queries for Wita Energy Picroft
+## it can be used for testing
+
+
+@ Charger
+was ist der Status der Wallbox
+wird zur Zeit ein Auto an der Wallbox geladen
+hängt ein Auto am Charger
+ist ein Auto mit der Wallbox verbunden
+ist ein Auto am Charger
+lädt ein Auto am Charger
+wird ein Auto geladen
+ist ein Fahrzeug mit der Wallbox verbunden
+ist ein Fahrzeug am Charger
+lädt ein Fahrzeug am Charger
+wird ein Fahrzeug geladen
+wieviel Strom hat der Charger bis heute insgesamt geladen
+wieviel Kilowatt hat die Wallbox bis heute geladen
+wieviel Strom hat die Wallbox insgesamt geladen
+wieviel Strom hat die Wallbox seit der Installation geladen
+Was ist die Seriennummer des Chargers
+Welche Seriennummer hat der Charger
+Sag mir die ID der Wallbox
+wieviel Strom hat der Charger beim letzten Ladevorgang geladen
+wieviel Kilowatt hat die Wallbox beim letzten mal geladen
+wieviel Strom hat die Wallbox heute geladen

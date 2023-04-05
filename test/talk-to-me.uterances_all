@@ -1,0 +1,240 @@
+## this is a sampler of commonly used queries for Wita Energy Picroft
+## it can be used for testing
+
+@ Car
+was macht das auto
+wie geht es dem auto
+geb mir einen Status zum Auto
+wieweit können wir noch fahren
+was ist die Reichweite
+wieviel sind wir mit dem Auto schon gefahren
+was ist der Kilometerstand
+was steht auf dem Tacho
+wieviele km können wir noch fahren
+wieviele kilometer können wir noch fahren
+was ist mit der Batterie des Autos
+wie geht es der Batterie des Autos
+was ist auf der Batterie noch drauf
+was ist die Ladung der Batterie meines Autos
+wieviel Prozent ist die Batterie des Autos noch geladen
+
+@ Lease
+seit wann haben wir den Leasingvertrag
+seit wann gilt der Leasingvertrag
+wie lange läuft der Leasingvertrag bereits
+fail wieviele km dürfen wir laut Leasingvertrag pro Jahr fahren
+wieviele kilometer dürfen wir laut Leasingvertrag pro Jahr fahren
+was dürfen wir pro Jahr fahren
+was ist die Kilometergrenze im Leasingvertrag
+sind wir über dem Limit des Leasingvertrages
+was ist mit dem Leasingvertrag
+was sagt der Leasingvertrag
+was steht im Leasingvertrag
+sag mir alles über den Leasingvertrag
+geb mir einen Status zum Leasingvertrag
+
+@ Heatpump
+was ist mit der Wärmepumpe
+wie geht es der Wärmepumpe
+sage mir was die Wärmepumpe macht
+berichte mir über den Zustand der Wärmepumpe
+läuft die Wärmepumpe
+ist der Kompressor aktiv
+läuft der Kompressor
+sag mit ob der Kompressor läuft
+was hat die Wärmepumpe heute verbraucht
+sage mit was die Wärmepumpe heute verbraucht hat
+wie hoch war heute der Verbrauch der Wärmepumpe
+wie hoch ist die Aussentemperatur
+ist es draußen kalt?
+ist es draußen warm?
+wie kalt ist es draußen
+wie warm ist es draußen
+was ist die Temperatur draußen
+
+@ PV
+was hat die Photovoltaik heute produziert
+was hat das Solardach heute gebracht
+wieviel Strom hat die PV heute produziert
+wieviel Strom kam heute vom Dach
+wieviel Strom ist heute vom Dach gekommen
+wieviel Kilowatt hat das Solardach heute gebracht
+wieviel KW hat das Solardach heute gebracht
+was kam heute von der Photovoltaik
+was kam heute vom Solardach
+was kam heute vom Dach
+was hat das Solardach heute gebracht
+was haben wir bis jetzt vom Solardach bekommen
+sag mir wieviel Strom heute vom Solardach gekommen ist
+was hat die Photovoltaik insgesamt bis heute produziert
+was hat das Solardach insgesamt bis heute gebracht
+wieviel Strom hat die PV insgesamt bis heute produziert
+wieviel Strom kam insgesamt bis heute vom Dach
+wieviel Strom ist insgesamt bis heute vom Dach gekommen
+wieviel Kilowatt hat das Solardach insgesamt bis heute gebracht
+wieviel KW hat das Solardach insgesamt bis heute gebracht
+was kam insgesamt bis heute von der Photovoltaik
+was kam insgesamt bis heute vom Solardach
+was kam insgesamt bis heute vom Dach
+was hat das Solardach insgesamt bis heute gebracht
+was haben wir bis jetzt insgesamt bis heute vom Solardach bekommen
+sag mir wieviel Strom insgesamt bis heute vom Solardach gekommen ist
+was kam von Anfang an von der Photovoltaik
+was kam von Anfang an insgesamt bis heute vom Solardach
+was kam von Anfang an bis heute vom Dach
+was hat das Solardach von Anfang an gebracht
+was haben wir von Anfang an bis jetzt vom Solardach bekommen
+sag mir wieviel Strom von Anfang an insgesamt bis heute vom Solardach gekommen ist
+
+@ Grid
+was haben wir heute aus dem Netz bezogen
+wie hoch war heute der Netzbezug
+wieviel Strom haben wir heute aus dem Netz geholt
+wieviel Kilowatt wurden heute aus den Netz bezogen
+sag mir wieviel Energie heute aus dem Stromnetz bezogen worden ist
+wieviel KW haben wir heute aus dem Netz gekommen
+wie hoch war heute der Bezug aus dem Stromnetz
+wie hoch war heute der Strombezug
+was haben wir heute in das Netz eingespeist
+wie hoch war heute die  Einspeisung
+was haben wir bis heute insgesamt aus dem Netz bezogen
+wie hoch war bis heute insgesamt der Netzbezug
+wieviel Strom haben wir bis heute insgesamt aus dem Netz geholt
+wieviel Kilowatt wurden bis heute aus den Netz bezogen
+sag mir wieviel Energie insgesamt aus dem Stromnetz bezogen worden ist
+wieviel KW haben wir bis heute insgesamt aus dem Netz gekommen
+wie hoch war insgesamt der Bezug aus dem Stromnetz
+wie hoch war bis heute der Strombezug
+was haben wir bis heute insgesamt in das Netz eingespeist
+wie hoch war bis heute insgesamt die  Einspeisung
+wie hoch war bis heute die Stromabgabe
+wieviel Strom haben wir insgesamt in das Netz eingespeist
+wieviel haben wir bis heute eingespeist
+wieviel Kilowatt haben wir bis heute insgesamt in das Stromnetz abgegeben
+sag mir wieviel Energie wir insgesamt in das Stromnetz eingespeist haben
+wieviel KW haben wir bis heute in das Stromnetz eingespeist haben
+wie hoch war bis heute insgesamt die Einspeisung in das Stromnetz
+wie hoch war insgesamt die Einspeisung
+
+@ SoC
+was ist mit dem Speicher
+was haben wir noch im Photovoltaikspeicher
+wie geht es dem Photovoltaikspeicher
+was ist auf dem Solarspeicher noch drauf
+was hat der Solarspeicher noch drauf
+wieviel hat der pv Speicher noch geladen
+wieviel ist im pv Speicher noch drin
+wieviel Prozent sind im Energiespeicher noch geladen
+sag mir die Ladung des Energiespeicher
+was ist noch im Energiespeicher
+
+@ Charger
+was ist der Status der Wallbox
+wird zur Zeit ein Auto an der Wallbox geladen
+hängt ein Auto am Charger
+ist ein Auto mit der Wallbox verbunden
+ist ein Auto am Charger
+lädt ein Auto am Charger
+wird ein Auto geladen
+ist ein Fahrzeug mit der Wallbox verbunden
+ist ein Fahrzeug am Charger
+lädt ein Fahrzeug am Charger
+wird ein Fahrzeug geladen
+wieviel Strom hat der Charger bis heute insgesamt geladen
+wieviel Kilowatt hat die Wallbax bis heute geladen
+wieviel Strom hat die Wallbax insgesamt geladen
+wieviel Strom hat die Wallbax seit der Installation geladen
+Was ist die Seriennummer des Chargers
+Welche Seriennummer hat der Charger
+Sag mir die ID der Wallbox
+
+@ Summary Report
+Geb mir einen Überblick über alles
+Was ist der allgemeine Status
+Sag mir den Energiestatus
+Wie geht es dem Haus
+Geb mir einen Überblick über das Haus
+Was ist mit dem Energiestatus
+Was ist der Energiestatus des Hauses
+
+@ Vehicle Report
+Geb mir einen Überblick über das Auto
+Was ist der Status des E Autos
+Sag mir den Status des Elektroautos
+Wie geht es dem Elektroautos
+Wie geht es dem E Auto
+Geb mir einen Überblick über das Fahrzeug
+Was ist mit dem Fahrzeug
+Was ist der Status des Autos
+Was ist der Status des Elektroautos
+Wie geht es dem Elektroautos
+Geb mir einen Bericht über das E Auto
+Sag mir wie es dem Auto geht
+Sag mir was das Auto macht
+
+@ Vehicle Lease Report
+Geb mir einen Überblick über den Leasingvertrag
+Was ist der Status des Leasingvertrags
+Sag mir den Status des Leasings
+Wie geht es dem Leasing
+Wie geht es dem Leasingvertrag
+Geb mir einen Überblick über den Leasingvertrag
+Was ist mit dem Leasing
+Was ist der Status des Leasings
+Geb mir einen Bericht über den Leasingvertrag
+Sag mir wie es dem Leasingvertrag geht
+Sag mir was das der Leasingvertrag macht
+
+@ Charger Report
+Geb mir einen Überblick über die Wallbox
+Was ist der Status der Wallbox
+Sag mir den Status der Wallbox
+Wie geht es der Wallbox
+Wie geht es dem Charger
+Geb mir einen Überblick über den Charger
+Was ist mit dem Charger
+Was ist der Status des Chargers
+Geb mir einen Bericht über die Wallbox
+Sag mir wie es der Wallbox geht
+Sag mir was der Charger macht
+
+@ Heatpump Report
+@ Heatpump Report
+Geb mir einen Überblick über die Wärmepumpe
+Was ist der Status der Wärmepumpe
+Sag mir den Status der Wärmepumpe
+Wie geht es der Wärmepumpe geht
+Geb mir einen Überblick über die Wärmepumpe
+Was ist mit der Wärmepumpe
+Geb mir einen Bericht über der Wärmepumpe
+Sag mir was der Wärmepumpe macht
+
+@ Grid Report
+Geb mir einen Überblick über das Stromnetz
+Was ist der Status des Stromnetzes
+Sag mir den Status des Netzes
+Wie geht es dem Stromnetz
+Wie geht es dem Netz
+Geb mir einen Überblick über das Netz
+Was ist mit dem Stromnetz
+Was ist der Energiestatus des Stromnetzes
+Was ist der Energiestatus des Netzes
+Wie geht es dem Netz
+Geb mir einen Bericht über das Stromnetz
+Sag mir wie es dem Stromnetz geht
+Sag mir was das Netz macht
+
+@ PV Report
+Geb mir einen Überblick über die PV
+Was ist der Status der Photovoltaik
+Sag mir den Status der Photovoltaik
+Wie geht es der Photovoltaik
+Wie geht es der PV
+Geb mir einen Überblick über die PV
+Was ist mit der Photovoltaik
+Was ist der Energiestatus der Photovoltaik
+Was ist der Energiestatus der PV
+Wie geht es dem Solardach
+Geb mir einen Bericht über die PV
+Sag mir wie es dem Solardach geht
+Sag mir was die PV macht

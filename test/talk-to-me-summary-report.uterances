@@ -1,0 +1,17 @@
+## this is a sampler of commonly used queries for Wita Energy Picroft
+## it can be used for testing
+## lines starting with # are internal comments
+## lines starting with @ are Display comments and will be posted to the stdout
+## lines starting with § indicate a sleep time in seconds
+##   before the next uterance will be processed
+## If § is not specified, the value from the pitester-talk-to-me utility will be used
+
+@ Summary Report
+§ 180
+Geb mir einen Überblick über alles
+Was ist der allgemeine Status
+Sag mir den Energiestatus
+Wie geht es dem Haus
+Geb mir einen Überblick über das Haus
+Was ist mit dem Energiestatus
+Was ist der Energiestatus des Hauses
