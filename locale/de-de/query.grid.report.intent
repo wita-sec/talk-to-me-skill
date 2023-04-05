@@ -1,8 +1,7 @@
-(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) (zum|über das|vom) (Netz|Stromnetz)
-(Berichte|reporte|sag was|sage was) (zum|über das) (Netz|Stromnetz)
-(Was|wie) ist der (Status|Zustand) des (Netzes|Stromnetzes)
-(Sag|sage) was ist der (Status|Zustand) des (Netzes|Stromnetzes)
-(Sag|Sage) mir, wie es dem (Netz|Stromnetz) geht.
-(Sag|Sage) mir, was das (Netz|Stromnetz) macht.
-(Wie geht's dem|Wie gehts dem|was macht das) (Netz|Stromnetz)?
-Was ist mit dem (Netz|Stromnetz)?
+(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) (zum|über das|vom) (Netz|Stromnetz|Grid)
+(Berichte|reporte|sag was|sage was) (zum|über das) (Netz|Stromnetz|Grid)
+(Was|wie) ist der (Status|Zustand|Energiestatus|Energie Status) des (Netzes|Stromnetzes|Grids)
+(Sag|sage) (was ist|was|" ") (der|den) (Status|Zustand|Energiestatus|Energie Status) des (Netzes|Stromnetzes|Grids) (ist|" ").
+(Sag|Sage) mir, wie es dem (Netz|Stromnetz|Grid) geht.
+(Sag|Sage) mir, was das (Netz|Stromnetz|Grid) macht.
+(Wie geht's|Wie gehts|wie geht es|was macht|was ist mit) (das|dem) (Netz|Stromnetz|Grid)?

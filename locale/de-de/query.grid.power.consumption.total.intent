@@ -1,6 +1,4 @@
-(Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw) wurde (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen)?
-(Sag|Sage) mir, (wieviel|wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|K W) (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen) wurde.
-(Was|Wieviel|Wie viel) wurde (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen)?
-(was|wieviel|wieviele|wie viel|wie viele) haben wir (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen).
-(Sag|Sage) mir, (was|wieviel|wieviele|wie viel|wie viele) (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen) wurde.
-(Sag|Sage) mir, (was|wieviel|wieviele|wie viel|wie viele) haben wir (insgesamt|von Anfang an) aus dem (Netz|Stromnetz) (bezogen|verbraucht|geholt|geladen).
+(Was|Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw|" ") (wurde|wurden|" ") (insgesamt|insgesamt bis heute|bis heute insgesamt|von Anfang an|bis heute|seit Installation|seit der Installation) aus dem (Netz|Stromnetz|grid) (bezogen|verbraucht|geholt|geladen|bekommen)?
+(was|wieviel|wieviele|wie viel|wie viele) (Strom|Energie|Kilowatt|kw|" ") haben wir (insgesamt|insgesamt bis heute|bis heute insgesamt|von Anfang an|bis heute|seit Installation|seit der Installation) aus dem (Netz|Stromnetz|grid) (bezogen|verbraucht|geholt|geladen|bekommen)?
+(Sag mir|Sage mir|" ") (was|wieviel|wieviele|wie viel|wie viele) (Strom|Energie|Kilowatt|kw|" ") (wurde|wurden|haben wir|wir|" ") (insgesamt|insgesamt bis heute|bis heute insgesamt|von Anfang an|bis heute|seit Installation|seit der Installation) aus dem (Netz|Stromnetz|grid) (bezogen|verbraucht|geholt|geladen|bekommen) (wurde|wurden|worden ist|worden sind|haben|" ").
+Wie hoch war (insgesamt|insgesamt bis heute|bis heute insgesamt|von Anfang an|bis heute|seit Installation|seit der Installation) (der|" ") (Netzbezug|Netz Bezug|Strombezug|Strom Bezug|Energieverbrauch|Energie Verbrauch|Verbrauch|Energiebezug|Energie Bezug|Bezug) (aus dem|" ") (Netz|Stromnetz|grid|" ")?

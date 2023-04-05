@@ -1,9 +1,7 @@
-(Wieviel|Wie viel) (Strom|Energie|Kilowatt|kw|" ") hat die Wärmepumpe heute verbraucht?
-(Wieviel|Wie viel) (Strom|Energie|Kilowatt|kw|" ") brauchte die Wärmepumpe heute?
-(Sag|Sage) mir, (Wieviel|Wie viel) (Strom|Energie|Kilowatt|kw|" ") hat die Wärmepumpe heute verbraucht hat.
-(Sag|Sage) mir, (Wieviel|Wie viel) (Strom|Energie|Kilowatt|kw|" ") brauchte die Wärmepumpe heute.
-(Was|Wieviel|Wie viel) hat die Wärmepumpe heute verbraucht?
-(Was|Wieviel|Wie viel) (war|ist) der Verbrauch der Wärmepumpe heute?
-(Sag|Sage) mir den Verbrauch der Wärmepumpe von heute.
-(Sag|Sage) was die Wärmepumpe heute verbraucht hat.
-Wie hoch ist (heute|" ") der Verbrauch der Wärmepumpe (heute|" ")?
+(Wieviel|Wie viel|Was) (Strom|Energie|Kilowatt|kw|" ") hat die Wärmepumpe (heute|" ") (verbraucht|gebraucht)?
+(Wieviel|Wie viel|Was) (Strom|Energie|Kilowatt|kw|" ") (verbrauchte|brauchte) die Wärmepumpe (heute|" ")?
+(Wieviel|Wie viel|Was) (Strom|Energie|Kilowatt|kw|" ") hat die Wärmepumpe (heute|" ") (verbraucht|gebraucht).
+(Wieviel|Wie viel|Was) (Strom|Energie|Kilowatt|kw|" ") (verbrauchte|brauchte) die Wärmepumpe (heute|" ").
+(Was|Wieviel|Wie viel|Wie hoch) (war|ist) (heute|" ") der Verbrauch der Wärmepumpe (heute|" ")?
+(Sag|Sage) (mir|" ") den (Verbrauch|Stromverbrauch|Strom Verbrauch|Energieverbrauch|Energie Verbrauch) der Wärmepumpe (von|" ") (heute|" ").
+(Sag|Sage) (mir|" ") was die Wärmepumpe (heute|" ") (verbraucht|verbrauchte|brauchte) (hat|" ").

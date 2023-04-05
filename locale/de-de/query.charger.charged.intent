@@ -1,4 +1,4 @@
-(Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw) hat (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal) bereits geladen?
-(Wieviel|Wie viel|Was) hat (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal) (bereits|schon) geladen?
-(Sag|Sage) mir, (wieviel|wie viel|wieviele|wie viele) (Strom|Energie|Kilowatt|kw) (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal) (bereits|schon) geladen hat.
-(Sag|Sage) mir, (wieviel|wie viel) (der Charger|die Wallbox) (heute|bis jetzt) (bereits|schon|beim letzten mal) geladen hat.
+(Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw) hat (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal|beim letzten Ladevorgang) (bereits|schon|" ") geladen?
+(Wieviel|Wie viel|Was) hat (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal|beim letzten Ladevorgang) (bereits|schon|" ") geladen?
+(Sag|Sage) mir, (wieviel|wie viel|wieviele|wie viele) (Strom|Energie|Kilowatt|kw) (der Charger|die Wallbox) (heute|bis jetzt|beim letzten mal|beim letzten Ladevorgang) (bereits|schon|" ") geladen hat.
+(Sag|Sage) mir, (wieviel|wie viel) (der Charger|die Wallbox) (heute|bis jetzt) (heute|bis jetzt|beim letzten mal|beim letzten Ladevorgang) geladen hat.

@@ -1,5 +1,7 @@
-(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) (über den|vom) (Energiehaushalt|Energiestatus|Energie haushalt|Energie status|" ")
-(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) über alles.
-(Berichte|reporte) (mir|" ") (über den|vom) (Energiehaushalt|Energiestatus|Energie haushalt|Energie status|" ")
+(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) (über die|über den|vom|über das|" ") (Hausenergie|Haus Energie|Energiehaushalt|Energiestatus|Energie haushalt|Energie status|allgemeinen Status|Energie allgmein|Haus|" ")
+(Geb|gebe|gib) mir einen (Überblick|Bericht|Report) (über alles|von allem).
+(Berichte|reporte) (mir|" ") (über den|vom) (Hausenergie|Haus Energie|Energiehaushalt|Energiestatus|Energie haushalt|Energie status||allgemeinen Status|Energie allgmein|Haus|" ")
 (Berichte|reporte) (mir|" ") (über alles|von allem)
-(Was ist|wie ist|wie gehts|wie geht es) (der|dem) (Energiehaushalt|Energiestatus|Energie haushalt|Energie status)
+(Was ist|wie ist|wie gehts|geht's|wie geht es|was ist mit) (der|dem) (Hausenergie|Haus Energie|Energiehaushalt|Energiestatus|Energie haushalt|Energie status|allgemeine Status|Energie allgmein|Haus) (des Hauses|" ")
+(Sag|sage) (mir|" ") den (Status der Hausenergie|Status der Haus Energie|Status des Energiehaushalts|Energiestatus|Status des Energie haushalts|Energie status|allgemeinen Status|Status der Energie allgmein|Status) (des Hauses|" ")
+Sag mir den Energiestatus

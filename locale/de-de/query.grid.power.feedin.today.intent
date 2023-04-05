@@ -1,8 +1,6 @@
-(Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw|" ") wurde (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen)?
-(Sag|Sage) mir, (wieviel|wieviele|wie viel|wie viele) (Strom|Energie|Kilowatt|kw|" ") (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen) wurde.
-(Was|Wieviel|Wie viel) wurde (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen)?
-(was|wieviel|wieviele|wie viel|wie viele) haben wir (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen).
-(Sag|Sage) mir, (was|wieviel|wieviele|wie viel|wie viele) (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen) wurde.
-(Sag|Sage) mir, (was|wieviel|wieviele|wie viel|wie viele) haben wir (heute|bis jetzt) in das (Netz|Stromnetz) (abgegeben|eingespeist|geladen).
-Wie hoch war heute die (Einspeisung|Abgabe|Stromeinspeisung|Stromabgabe) in das (Netz|Stromnetz).
-Wie hoch war heute die  (Abgabe|Einspeisung).
+(Was|Wieviel|Wieviele|Wie viel|Wie viele) (Strom|Energie|Kilowatt|kw|" ") (ist|sind|wurde|wurden|" ") (heute|bis jetzt|" ") (ins|in das|" ") (Netz|Stromnetz|grid|" ") (heute|bis jetzt|" ") (abgegeben|eingespeist|geladen) (worden|" ")?
+(Sag|Sage) mir (was|wieviel|wieviele|wie viel|wie viele) (Strom|Energie|Kilowatt|kw|" ") (heute|bis jetzt|" ") (ins|in das|" ") (Netz|Stromnetz|grid|" ") (heute|bis jetzt|" ") (abgegeben|eingespeist|geladen) (wurde|wurden|worden ist|worden sind|" ").
+(was|wieviel|wieviele|wie viel|wie viele) haben wir (heute|bis jetzt|" ") (ins|in das|" ") (Netz|Stromnetz|grid|" ") (abgegeben|eingespeist|geladen).
+(Sag|Sage) mir (was|wieviel|wieviele|wie viel|wie viele) (heute|bis jetzt|" ") (ins|in das|" ") (Netz|Stromnetz|grid|" ") (abgegeben|eingespeist|geladen) (wurde|wurden|worden ist|worden sind|" ").
+(Sag|Sage) mir (was|wieviel|wieviele|wie viel|wie viele) (haben wir|wir) (heute|bis jetzt|" ") (ins|in das|" ") (Netz|Stromnetz|grid|" ") (heute|bis jetzt|" ") (abgegeben|eingespeist|geladen) (haben|" ").
+Wie hoch war heute die (Einspeisung|Abgabe|Stromeinspeisung|Stromabgabe|Strom Einspeisung|Strom Abgabe) (ins|in das|" ") (Netz|Stromnetz|grid|" ").
