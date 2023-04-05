@@ -40,8 +40,59 @@ import time
 import json
 import pwd
 from pprint import pprint
+#relative import does not work when we use this module as a __main__,
+#  what we in fact do for testing
+#  as a workaround we use importlib, see below rather than
+#  --> from .wita_pi_datetime import pi_datetime
+# import importlib
+# pi_datetime = importlib.import_module('wita_pi_datetime').pi_datetime
+# this import fails on Pi4 OS, therefore now added wita_pi_datatime code to this module
 
-################################################################################
+############################################################################
+
+class pi_datetime:
+    """ provides methods around date and time
+        e.g. diff between two dates
+        more methods to come...
+
+    """
+    def __init__(self):
+        self.iso_format = "%Y-%m-%d %H:%M:%S"
+
+    ############################################################################
+
+    def diff(self, date_from, date_to):
+        """ calculates difference between the two dates
+            dates need to be formatted as string in self.iso_format
+            when a date is "now", the current date will be used.
+            The difference is returned in terms of days.
+            rc = 0 no errors, else some error occured
+            rc_msg = return message
+            rc_diff = difference between dates as int
+        """
+        rc = 0
+        rc_msg = "success"
+        rc_diff = 0
+        if date_from == 'now':
+            dt_dt_from = datetime.datetime.now()
+            dt_str_from = dt_dt_from.strftime(self.iso_format)
+        else:
+            dt_str_from = date_from
+
+        if date_to == 'now':
+            dt_dt_to = datetime.datetime.now()
+            dt_str_to = dt_dt_to.strftime(self.iso_format)
+        else:
+            dt_str_to = date_to
+
+        dt_from = datetime.datetime.strptime(dt_str_from, self.iso_format)
+        dt_to   = datetime.datetime.strptime(dt_str_to,   self.iso_format)
+        rc_diff = ((dt_from - dt_to).days)
+        return rc, rc_msg, rc_diff
+
+# class pi_datetime
+############################################################################
+
 class pi_energy:
     """ purpose of this class is to answer queries about items in json files
         json files are provided in the the  path_to_energy_files folder.
@@ -84,11 +135,13 @@ class pi_energy:
             "%%Nload"   : "nicht bezogen sondern eingespeist",
             "%%Pcons"   : "verbraucht",
             "%%Ncons"   : "nicht verbraucht sondern eingespeist",
+            "%%Pmoreless":"mehr",
+            "%%Nmoreless":"weniger",
             "C"         : "ein Fahrzeug verbunden und wird geladen",
             "A"         : "kein Fahrzeug verbunden",
             "B"         : "ein Fahrzeug verbunden. Es wird aber nicht geladen",
             "%"         : "Prozent",
-            "km"        : "Kilometern",
+            "km"        : "Kilometer",
 
         }
         # TTS variable format:  as used in pi_query_items (below)
@@ -140,8 +193,8 @@ class pi_energy:
             "netzeinspeisung-total Energy": ("4", "Bisher wurden insgesamt $$V %%U Strom eingespeist"),
             "pv-total Energy": ("4", "Die Photovoltaik hat insgesamt bisher $$V %%U Strom erzeugt"),
             "netzbezug-total Energy": ("4", "Es wurden bisher insgesamt $$V %%U Strom aus dem Netz bezogen"),
-            "pv-aktuell Energy": ("4", "Photovoltaik aktuell Enerie ist $$V %%U Strom"),
-            "stromspeicher Soc": ("4", "Die Stromspeicher ist aktuell zu $$V %%U gefüllt"),
+            "pv-aktuell Energy": ("4", "Die Photovoltaik hat heute bisher $$V %%U Strom erzeugt"),
+            "stromspeicher Soc": ("4", "Der Stromspeicher ist aktuell zu $$V %%U gefüllt"),
             }
 
             # This hash is a patch for self.pi_query_items
@@ -159,6 +212,17 @@ class pi_energy:
 
             }
 
+            # This hash provodes static query_item values
+            # These values are not retrieved from json files.
+            # Rather they are static, that means hard-coded in this hash
+        self.pi_query_items_static = {
+            #search key                      unit     static value           message text
+            # this item is used internally and should not be spoken
+            "vehicle lease_start_date_iso":        ("Datum", "2021-09-01 12:00:00", "Das Liesing des E-Autos startete mit dem %%U $$V"),
+            "vehicle lease_start_date_spoken":     ("Datum", "2021-09-01 12:00:00", "Das Liesing des E-Autos begann am ersten September 2021"),
+            "vehicle lease_km_committed_per_year": ("km", "12500", "Laut Liesing Vertrag dürfen mit dem E-Auto pro Jahr $$V %%U gefahren werden"),
+            }
+
         # This hash controls query items that cannot be answered 1:1 by WITA_energy
         # json files. They rather are the result of specific calculations by functions
         # However the values of the json files are the basis for these calculations
@@ -168,6 +232,13 @@ class pi_energy:
             "energy_consumption_today": (self.calc_energy_consumption, ("kWh", "In der Energiebilanz wurden heute $$V %%U Strom %%Scons")),
             #   what is the degree of autonomy today
             "energy_autonomy_today":    (self.calc_autonomy_degree,    ("%",   "Der Autonomiegrad in der Energiebilanz heute beträgt $$V %%U")),
+            # how many days the vehicle has been leased as of today"
+            "vehicle_days_leased_now":  (self.calc_vehicle_days_leased_now, ("Tagen", "Der Liesing Vertrag für das E-Auto besteht heute seit $$V %%U")),
+            # how many km are committed to go by vehicle as of today
+            "vehicle_km_committed_now":  (self.calc_vehicle_km_committed_now, ("km", "Bis heute durften laut Liesing Vertrag mit dem E-Auto bis zu $$V %%U zurückgelegt werden")),
+            # which is the range we are over or below the committed number of km
+            "vehicle_km_tolerance_now":  (self.calc_vehicle_km_tolerance_now, ("km", "Stand heute wurden mit dem E-Auto $$V %%U %%Smoreless als das vereinbarte Limit gefahren")),
+
         }
 
         # These lists  provide queries (pi_query_items, pi_query_items_patch, pi_query_items_functions)
@@ -180,6 +251,7 @@ class pi_energy:
             "energy_autonomy_today",
             "netzeinspeisung-total Energy_Today",
             "netzbezug-total Energy_Today",
+            "stromspeicher Soc",
             "power_input_total_today",
             "power_input_dhw_today",
             "charger Energy",
@@ -187,12 +259,23 @@ class pi_energy:
             "charger Charged",
             "vehicle Odometer",
             "vehicle Range",
+            "vehicle_km_tolerance_now",
         ]
         #    vehicle report
         self.pi_query_report_vehicle = [
             "vehicle Odometer",
             "vehicle Soc",
             "vehicle Range",
+            "vehicle_km_tolerance_now",
+        ]
+        #    lease report
+        self.pi_query_report_lease = [
+            "vehicle lease_start_date_spoken",
+            "vehicle lease_km_committed_per_year",
+            "vehicle_days_leased_now",
+            "vehicle Odometer",
+            "vehicle_km_committed_now",
+            "vehicle_km_tolerance_now",
         ]
         #    charger report
         self.pi_query_report_charger = [
@@ -222,6 +305,8 @@ class pi_energy:
         self.pi_query_report_pv = [
             "pv-total Energy_Today",
             "stromspeicher Soc",
+            "netzbezug-total Energy_Today",
+            "netzeinspeisung-total Energy_Today",
             "energy_autonomy_today",
         ]
         # This hash controls the Energy Reports
@@ -229,6 +314,7 @@ class pi_energy:
             # report name    pointer to the list of report items
             "summary":      (self.pi_query_report_summary),
             "vehicle":      (self.pi_query_report_vehicle),
+            "lease":        (self.pi_query_report_lease),
             "charger":      (self.pi_query_report_charger),
             "heatpump":     (self.pi_query_report_heatpump),
             "grid":         (self.pi_query_report_grid),
@@ -290,6 +376,64 @@ class pi_energy:
             rc_msg = fct + " failed by " + str(r_1) + " " + r_msg_1 + str(r_2) + " " + r_msg_2 + str(r_3) + " " + r_msg_3 + "!"
             rc = 2
         #print(fct + " r_value=" + str(r_value))
+        return rc, rc_msg, str(r_value)
+
+    ############################################################################
+    def calc_vehicle_days_leased_now(self):
+        """ calculate the number of day the vehicle has been leased as of today
+            the number of days is calculated by the datetime difference
+                 today - "vehicle lease_start_date_iso"
+            in days
+        """
+        fct = " pi_energy.calc_vehicle_days_leased_now() "
+        rc = 0
+        rc_msg = "success"
+        r_value = 42
+        # pi datetime methods
+        pi_dt = pi_datetime()
+        # retrive required basic measures
+        r1, r1_msg, r1_unit, r1_value, r1_descr, r1_tts = self.query_item("vehicle lease_start_date_iso")
+        rdt, rdt_msg, rdt_diff = pi_dt.diff('now', r1_value)
+        #print(fct + " rdt_diff= " + str(rdt_diff) + "\n")
+        return rc, rc_msg, str(rdt_diff)
+
+    ############################################################################
+    def calc_vehicle_km_committed_now(self):
+        """ calculate how many km are committed to go with the vehicle as of today
+            this number is calculated by
+                (calc_vehicle_km_committed_now) * vehicle_days_leased_now
+        """
+        fct = " pi_energy.calc_vehicle_km_committed_now() "
+        rc = 0
+        rc_msg = "success"
+        r_value = 42
+        # retrive required basic measures
+        r1, r1_msg, r1_unit, r1_value, r1_descr, r1_tts = self.query_item("vehicle lease_km_committed_per_year")
+        r2, r2_msg,          r2_value                   = self.calc_vehicle_days_leased_now()
+        #print(fct + " r1_value=" + r1_value + "\n")
+        #print(fct + " r2_value=" + r2_value + "\n")
+        r_value = (float(r1_value))/365 * float(r2_value)
+        return rc, rc_msg, str(r_value)
+
+    ############################################################################
+    def calc_vehicle_km_tolerance_now(self):
+        """ calculate how many km have been driven below or above the committed limit
+            this number is calculated by
+                (vehicle Odometer) - calc_vehicle_km_committed_now
+
+            return: r_value <  0 --> we are r_value km below the limit
+                    r_value >= 0 --> we are r_value km above the limit
+        """
+        fct = " pi_energy.calc_vehicle_km_tolerance_now() "
+        rc = 0
+        rc_msg = "success"
+        r_value = 42
+        # retrive required basic measures
+        r1, r1_msg, r1_unit, r1_value, r1_descr, r1_tts = self.query_item("vehicle Odometer")
+        r2, r2_msg,          r2_value                   = self.calc_vehicle_km_committed_now()
+        #print(fct + " r1_value=" + r1_value + "\n")
+        #print(fct + " r2_value=" + r2_value + "\n")
+        r_value = float(r1_value) - float(r2_value)
         return rc, rc_msg, str(r_value)
 
     ############################################################################
@@ -556,8 +700,10 @@ class pi_energy:
 
     ############################################################################
     def query_item(self, item):
-        """ search item in json files and return its value, unit and description
-            searched item must be one of self.pi_query_items or self.pi_query_items_patch
+        """ search item and return its value, unit and description
+            searched item must be one of self.pi_query_items, pi_query_items_static or self.pi_query_items_patch
+            in case of static, the item values are retrieved from a static (hard coded) hash
+            otherwise they are looked up the corresponding json files
             return rc = 0 ok, else error
                    rc_msg return message
                    r_unit unit of the item
@@ -573,6 +719,16 @@ class pi_energy:
         r_descr = "None"
         pi_query_ctrl = None
         r_tts_template = " "
+
+        # lookup requested item in pi_query_items_static
+        if item in self.pi_query_items_static:
+            pi_query_ctrl = self.pi_query_items_static[item]
+            r_unit = pi_query_ctrl[0]
+            r_value = pi_query_ctrl[1]
+            r_tts_template = pi_query_ctrl[2]
+            r_descr = "this is a static query_item"
+            return rc, rc_msg, r_unit, r_value, r_descr, r_tts_template
+
         # lookup requested item in "patch" hash pi_query_items_patch
         if item in self.pi_query_items_patch:
             pi_query_ctrl = self.pi_query_items_patch[item][1]
@@ -649,7 +805,7 @@ class pi_energy:
                     rc = 0
             return rc, rc_msg, rc_TTS
 
-        # lookup requested item in pi_query_items and pi_query_items_patch
+        # lookup requested item in pi_query_items, pi_query_items_static and pi_query_items_patch
         r, r_msg, r_unit, r_value, r_descr, r_tts_template = self.query_item(item)
         if r != 0:
             rc_msg = fct + " cannot retriev item: query_item failed by rc= " + str(r) + " r_msg= " + r_msg + "!"
@@ -710,6 +866,12 @@ if __name__ == "__main__":
             "vehicle Odometer",
             "vehicle Soc",
             "vehicle Range",
+            "vehicle lease_start_date_iso",
+            "vehicle vehicle lease_start_date_spoken",
+            "vehicle_days_leased_now",
+            "vehicle lease_km_committed_per_year",
+            "vehicle_km_committed_now",
+            "vehicle_km_tolerance_now",
             "netzbezug-total Energy",
             "netzbezug-total Energy_Today",
             "netzeinspeisung-total Energy",
@@ -723,6 +885,7 @@ if __name__ == "__main__":
             "energy_autonomy_today",
             "summary", # summary report about energy items
             "vehicle", # vehicle report
+            "lease", # lease report
             "charger", # charger report
             "heatpump",# heatpump report
             "grid",    # grid report

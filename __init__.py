@@ -16,7 +16,7 @@
 """
 Picroft Skill Talk-to-me
 TAGS: skill prototpye, learning skill programming, available for Picroft
-Version 3.0.20230123
+Version 3.1.20230320
 
 Skill idea: have some small talk with Picroft
             questions and answers about photovoltaik, heatpump, soc, grid, electric vehicle
@@ -25,8 +25,8 @@ Skill idea: have some small talk with Picroft
             Date collection and json file generation is not part of this project.
 """
 # Changelog
-# Version 3.0.20230110 prototyping new feature: query Pi about WITA-Energy data
-             
+# Version 3.0.20230110 added new feature: query Pi about WITA-Energy data
+# Version 3.1.20230320 added more vehicle queries
 
 import os
 from os.path import exists
@@ -42,7 +42,7 @@ class TalkToMe(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
         self.S_skill = "TalkToMe"
-        self.S_version = "V20230116.01"
+        self.S_version = "V20230306"
 
     def initialize(self):
         # IHaveAQuestion
@@ -53,6 +53,25 @@ class TalkToMe(MycroftSkill):
         self.register_intent_file("query.vehicle.soc.intent", self.handle_car_soc_query)
         # CarOdo (tested: 1)
         self.register_intent_file("query.vehicle.odometer.intent", self.handle_car_odometer_query)
+
+
+
+        # CarLeaseStartDate
+        self.register_intent_file("query.vehicle.lease.start.date.intent", self.handle_car_lease_start_date_query)
+        # CarLeaseKmCommittedPerYear
+        self.register_intent_file("query.vehicle.lease.km.committed.per.year.intent", self.handle_car_lease_km_committed_per_year_query)
+        # CarDaysLeasedNow
+        self.register_intent_file("query.vehicle.days.leased.now.intent", self.handle_car_days_leased_now)
+        # CarKmCommittedNow
+        self.register_intent_file("query.vehicle.km.committed.now.intent", self.handle_car_km_committed_now)
+        # CarKmToleranceNow
+        self.register_intent_file("query.vehicle.km.tolerance.now.intent", self.handle_car_km_tolerance_now)
+        #
+
+
+
+
+
         # OutdoorTemperature (tested: 1)
         self.register_intent_file("query.outdoor.temperature.intent", self.handle_outdoor_temperature_query)
         # DhwActive (tested: 1)
@@ -93,6 +112,8 @@ class TalkToMe(MycroftSkill):
         self.register_intent_file("query.summary.report.intent", self.summary_report_query)
         # VehicleReport
         self.register_intent_file("query.vehicle.report.intent", self.vehicle_report_query)
+        # VehicleLeaseReport
+        self.register_intent_file("query.vehicle.lease.report.intent", self.vehicle_lease_report_query)
         # ChargerReport
         self.register_intent_file("query.charger.report.intent", self.charger_report_query)
         # HeatpumpReport
@@ -114,6 +135,20 @@ class TalkToMe(MycroftSkill):
             "CarSoc":                    ("vehicle Soc",                  "query_vehicle_soc_not_known"),
             # car odometer
             "CarOdo":                    ("vehicle Odometer",             "query_vehicle_odometer_not_known"),
+
+
+            # car when was the lease started
+            "CarLeaseStartDate":         ("vehicle lease_start_date_spoken", "query_vehicle_lease_start_date_spoken_not_known"),
+            # car how many km to go are committed per year
+            "CarLeaseKmCommittedPerYear":("vehicle lease_km_committed_per_year", "query_vehicle_km_committed_per_year_not_known"),
+            # car how many days was the car leased as of today
+            "CarDaysLeasedNow":          ("vehicle_days_leased_now", "query_vehicle_days_leased_now_not_known"),
+            # car how many km to go are committed as of today
+            "CarKmCommittedNow":         ("vehicle_km_committed_now", "query_vehicle_km_committed_now_not_known"),
+            # car how many km have we gone above or beyond the limit
+            "CarKmToleranceNow":         ("vehicle_km_tolerance_now", "query_vehicle_km_tolerance_now_not_known"),
+
+
             # outdoor temperature at heatpump location
             "OutdoorTemperature":        ("outdoor",                      "query_outdoor_temperature_not_known"),
             # domestic hot water activ?
@@ -154,6 +189,8 @@ class TalkToMe(MycroftSkill):
             "SummaryReport":                ("summary",                        "summary_report_not_known"),
             # VehicleReport
             "VehicleReport":                ("vehicle",                        "vehicle_report_not_known"),
+            # VehicleLeaseReport
+            "VehicleLeaseReport":           ("lease",                          "vehicle_lease_report_not_known"),
             # ChargerReport
             "ChargerReport":                ("charger",                        "charger_report_not_known"),
             # HeatpumpReport
@@ -201,7 +238,7 @@ class TalkToMe(MycroftSkill):
     @adds_context("Context_Conversation")
     def handle_me_to_talk_intent(self, message):
         #self.S_hostname = "chuck  from  " + os.uname().nodename
-        self.S_hostname = "Chuck"
+        self.S_hostname = os.uname()[1]
         self.log.info("executing me.to.talk.intent" + " " + self.S_version)
         self.speak_dialog('me.to.talk', data={ 'hostname': self.S_hostname }, expect_response=False)
         self.speak_dialog('query.want.a.talk', expect_response=True)
@@ -294,6 +331,26 @@ class TalkToMe(MycroftSkill):
     def handle_car_odometer_query(self, message):
         self.query('CarOdo')
 
+    @intent_handler( IntentBuilder('CarLeaseStartDate').build() )
+    def handle_car_lease_start_date_query(self, message):
+        self.query('CarLeaseStartDate')
+
+    @intent_handler( IntentBuilder('CarLeaseKmCommittedPerYear').build() )
+    def handle_car_lease_km_committed_per_year_query(self, message):
+        self.query('CarLeaseKmCommittedPerYear')
+
+    @intent_handler( IntentBuilder('CarDaysLeasedNow').build() )
+    def handle_car_days_leased_now(self, message):
+        self.query('CarDaysLeasedNow')
+
+    @intent_handler( IntentBuilder('CarKmCommittedNow').build() )
+    def handle_car_km_committed_now(self, message):
+        self.query('CarKmCommittedNow')
+
+    @intent_handler( IntentBuilder('CarKmToleranceNow').build() )
+    def handle_car_km_tolerance_now(self, message):
+        self.query('CarKmToleranceNow')
+
     @intent_handler( IntentBuilder('OutdoorTemperature').build() )
     def handle_outdoor_temperature_query(self, message):
         self.query('OutdoorTemperature')
@@ -373,6 +430,10 @@ class TalkToMe(MycroftSkill):
     @intent_handler( IntentBuilder('VehicleReport').build() )
     def vehicle_report_query(self, message):
         self.query('VehicleReport')
+
+    @intent_handler( IntentBuilder('VehicleLeaseReport').build() )
+    def vehicle_lease_report_query(self, message):
+        self.query('VehicleLeaseReport')
 
     @intent_handler( IntentBuilder('ChargerReport').build() )
     def charger_report_query(self, message):

@@ -7,7 +7,7 @@ Aims to talk with the user
             you ask, Picroft answers to your questions
             Data is read from json files, examples attached.
             Date collection and json file generation is not part of this project.
-            LANG=de-de 
+            LANG=de-de
 
 ## Examples
 * "Bist zu zu Hause"
@@ -31,4 +31,3 @@ Entertainment
 #Funny
 #Surprise
 #Information about Smart Energy at Home 
-
