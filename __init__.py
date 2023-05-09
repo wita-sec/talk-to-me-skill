@@ -125,7 +125,8 @@ class TalkToMe(MycroftSkill):
 
         self.skill_path = "/opt/mycroft/skills/talk-to-me-skill"
         #self.lang = "de-de"
-        self.pi_e = pi_energy("/opt/mycroft/skills/talk-to-me-skill/energy-files")
+        #note:  see also pihelper.sh, implementation of the energy-files location must be in sync
+        self.pi_e = pi_energy("/tmp/talk-to-me_energy-files/energy-files")
 
         self.query_hash = {
         #   search_key                   WITA_query_item                  not_found_dialog file

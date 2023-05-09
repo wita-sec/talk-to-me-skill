@@ -129,8 +129,8 @@ class pi_energy:
             "kWh"       : "Kilowattstunden",
             "%%Tactive" : "aktiv",
             "%%Factive" : "nicht aktiv",
-            "%%Twork"   : "läuft zur Zeit",
-            "%%Fwork"   : "läuft zur Zeit nicht",
+            "%%Twork"   : "laeuft zur Zeit",
+            "%%Fwork"   : "laeuft zur Zeit nicht",
             "%%Pload"   : "bezogen",
             "%%Nload"   : "nicht bezogen sondern eingespeist",
             "%%Pcons"   : "verbraucht",
@@ -170,18 +170,18 @@ class pi_energy:
 
 
             ### items for json type HPP HPS HPP
-            "outdoor":    ( "3", "Die Aussentemperatur beträgt $$V %%U"),
+            "outdoor":    ( "3", "Die Aussentemperatur betraegt $$V %%U"),
             "dhw_active": ( "2", "Der Warmwasserkreislauf ist %%Bactive"),
-            "compressor_active": ( "3", "Der Kompressor der Wärmepumpe %%Bwork"),
-            "power_input_total_today": ("3", "Die Wärmepumpe hat heute $$V %%U verbraucht"),
-            "power_input_dhw_today": ("3", "Für Warmwasser wurden heute $$V %%U verbraucht"),
+            "compressor_active": ( "3", "Der Kompressor der Waermepumpe %%Bwork"),
+            "power_input_total_today": ("3", "Die Waermepumpe hat heute $$V %%U verbraucht"),
+            "power_input_dhw_today": ("3", "Fuer Warmwasser wurden heute $$V %%U verbraucht"),
             ### items for json type PVT
 
             ### items for json type CH
             "charger Identifier": ("6", "Die Seriennummer der Wallbox lautet $$V, bitte auswendig lernen"),
             "charger Charge status": ("6", "Mit der Wallbox ist zur Zeit $$T"),
             "charger Charged": ("6", "Beim letzten Ladevorgang hat die Wallbox $$V %%U geladen"),
-            "charger Energy": ("6", "Über alle Ladevorgänge hat die Wallbox bis heute $$V %%U geladen"),
+            "charger Energy": ("6", "ueber alle Ladevorgaenge hat die Wallbox bis heute $$V %%U geladen"),
 
             ### items json type V
             "vehicle Odometer": ("7", "Das Auto hat eine Kilometerleistung von $$V %%U erreicht"),
@@ -194,7 +194,7 @@ class pi_energy:
             "pv-total Energy": ("4", "Die Photovoltaik hat insgesamt bisher $$V %%U Strom erzeugt"),
             "netzbezug-total Energy": ("4", "Es wurden bisher insgesamt $$V %%U Strom aus dem Netz bezogen"),
             "pv-aktuell Energy": ("4", "Die Photovoltaik hat heute bisher $$V %%U Strom erzeugt"),
-            "stromspeicher Soc": ("4", "Der Stromspeicher ist aktuell zu $$V %%U gefüllt"),
+            "stromspeicher Soc": ("4", "Der Stromspeicher ist aktuell zu $$V %%U gefuellt"),
             }
 
             # This hash is a patch for self.pi_query_items
@@ -220,7 +220,7 @@ class pi_energy:
             # this item is used internally and should not be spoken
             "vehicle lease_start_date_iso":        ("Datum", "2021-09-01 12:00:00", "Das Liesing des E-Autos startete mit dem %%U $$V"),
             "vehicle lease_start_date_spoken":     ("Datum", "2021-09-01 12:00:00", "Das Liesing des E-Autos begann am ersten September 2021"),
-            "vehicle lease_km_committed_per_year": ("km", "12500", "Laut Liesing Vertrag dürfen mit dem E-Auto pro Jahr $$V %%U gefahren werden"),
+            "vehicle lease_km_committed_per_year": ("km", "12500", "Laut Liesing Vertrag duerfen mit dem E-Auto pro Jahr $$V %%U gefahren werden"),
             }
 
         # This hash controls query items that cannot be answered 1:1 by WITA_energy
@@ -231,11 +231,11 @@ class pi_energy:
             #   how much energy was consumed today (including pv and grid)?
             "energy_consumption_today": (self.calc_energy_consumption, ("kWh", "In der Energiebilanz wurden heute $$V %%U Strom %%Scons")),
             #   what is the degree of autonomy today
-            "energy_autonomy_today":    (self.calc_autonomy_degree,    ("%",   "Der Autonomiegrad in der Energiebilanz heute beträgt $$V %%U")),
+            "energy_autonomy_today":    (self.calc_autonomy_degree,    ("%",   "Der Autonomiegrad in der Energiebilanz heute betraegt $$V %%U")),
             # how many days the vehicle has been leased as of today"
-            "vehicle_days_leased_now":  (self.calc_vehicle_days_leased_now, ("Tagen", "Der Liesing Vertrag für das E-Auto besteht heute seit $$V %%U")),
+            "vehicle_days_leased_now":  (self.calc_vehicle_days_leased_now, ("Tagen", "Der Liesing Vertrag fuer das E-Auto besteht heute seit $$V %%U")),
             # how many km are committed to go by vehicle as of today
-            "vehicle_km_committed_now":  (self.calc_vehicle_km_committed_now, ("km", "Bis heute durften laut Liesing Vertrag mit dem E-Auto bis zu $$V %%U zurückgelegt werden")),
+            "vehicle_km_committed_now":  (self.calc_vehicle_km_committed_now, ("km", "Bis heute durften laut Liesing Vertrag mit dem E-Auto bis zu $$V %%U zurueckgelegt werden")),
             # which is the range we are over or below the committed number of km
             "vehicle_km_tolerance_now":  (self.calc_vehicle_km_tolerance_now, ("km", "Stand heute wurden mit dem E-Auto $$V %%U %%Smoreless als das vereinbarte Limit gefahren")),
 
@@ -453,7 +453,7 @@ class pi_energy:
                         #print('\n')
                         #print(fct + " json file loaded: " + jfile_ctl[0])
             else:
-                print(fct + " json file could not be loaded: " + jfile_ctl[1])
+                print(fct + " json file could not be loaded: " + path_to_file)
         #print('\n')
         #print(fct + " json_files hash: \n")
         #pprint(self.json_files)
@@ -583,7 +583,7 @@ class pi_energy:
         """ markup a TTS_template for TTS speach output.
             unit, value, description are formatted into the TTS_template
             template examples:
-                "Die Aussentemperatur beträgt $$V %%U"
+                "Die Aussentemperatur betraegt $$V %%U"
                 "Der Warmwasserkreislauf ist %%Bactive"
                 "Das Auto wird %%Bloaded"
                  $$V is a placeholder for value,
@@ -736,7 +736,7 @@ class pi_energy:
         else:
             # lookup requested item in pi_query_items and according json file
             if item in self.pi_query_items:
-                # example: "outdoor": ( "3", "Die Aussentemperatur beträgt $$V %%U"),
+                # example: "outdoor": ( "3", "Die Aussentemperatur betraegt $$V %%U"),
                 # item exists
                 pi_query_ctrl = self.pi_query_items[item]
                 search_item = item
